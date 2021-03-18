@@ -15,13 +15,18 @@
 		include "db_link.php";
 		$date = date("Y-m-d");
 
+		session_start();
+		$uid = $_SESSION["onAuth"];
+
 		$sql = "INSERT INTO 
 					`videos`
-					(`id`, `file`, `date`) 
 				VALUES (
 					NULL,
 					' $filename',
-					'$date'
+					'$date',
+					$uid,
+					0,
+					0
 				)";
 
 		mysqli_query($db_link, $sql);
@@ -29,7 +34,7 @@
 ?>
 
 <meta charset="utf-8">
-
+<?php include "nav.html";?>
 <form method="POST" enctype="multipart/form-data">
 	<!-- Указываем размер файла в байтах -->
 	<input 

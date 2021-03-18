@@ -25,6 +25,7 @@
 <div class="hi">
 	WELCOME!
 	<?php echo $mail;?>
+	<?php include "nav.html";?>
 </div>
 <form method="POST">
 	<input type="submit" name="logout" value="logout">

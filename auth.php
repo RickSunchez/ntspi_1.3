@@ -7,13 +7,13 @@
 		$mail  = $_POST["email"];
 		$pass  = $_POST["pass"];
 
-		$sql = "SELECT `pass` 
+		$sql = "SELECT * 
 				FROM `users` 
 				WHERE `email` = '$mail'";
 
 		$res = mysqli_query($db_link, $sql);
 		$data = mysqli_fetch_assoc($res);
-		
+
 		if ($data == NULL) {
 			$error[] = "Неверный email";
 		} else {
@@ -21,7 +21,7 @@
 
 			if ($p == $pass) {
 				session_start();
-				$_SESSION["onAuth"] = $mail;
+				$_SESSION["onAuth"] = $data["user_id"];
 				header("Location: index.php");
 			} else {
 				$error[] = "Неверный пароль";
