@@ -48,6 +48,7 @@
 	Pass2
 	<input type="password" name="pass2">
 	<input type="submit" name="sbm" value="go">
+	<a href="auth.php">Авторизация</a>
 </form>
 
 

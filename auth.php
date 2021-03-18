@@ -22,7 +22,7 @@
 			if ($p == $pass) {
 				session_start();
 				$_SESSION["onAuth"] = $mail;
-				header("Location: page.php");
+				header("Location: index.php");
 			} else {
 				$error[] = "Неверный пароль";
 			}
@@ -43,6 +43,7 @@
 	Pass
 	<input type="password" name="pass">
 	<input type="submit" name="sbm" value="go">
+	<a href="reg.php">Зарегистрироваться</a>
 </form>
 
 
